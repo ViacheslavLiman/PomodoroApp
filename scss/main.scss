@@ -1,0 +1,151 @@
+.main {
+  width: 100%;
+  height: 410px;
+  position: relative;
+  margin-top: 45px;
+
+  @media(max-width: 768px) {
+    margin-top: 109px;
+  }
+  @media(max-width: 430px){
+    width: 300px;
+    height: 300px;
+    margin: 45px auto;
+  }
+
+  &__circle-out {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);;
+    box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+  }
+
+  &__circle-inner {
+    width: 366px;
+    height: 366px;
+    position: relative;
+    border-radius: 50%;
+    background-color: $darker-blue;
+
+    @media(max-width: 430px){
+      width: 267.8px;
+      height: 267.8px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+
+      circle {
+        fill: none;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-dasharray: 1070;
+        stroke-dashoffset: calc(1070 - (1070 * 0)/100);
+        transition: all linear 1s;
+      }
+
+      &:hover {
+        circle {
+          stroke-dashoffset: calc(1070 - (1070 * 100)/100);
+        }
+      }
+    }
+  }
+
+  &__text-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    left: 0;
+  }
+
+  &__time {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 700;
+    color: $light-gray;
+
+    .seconds, .minutes {
+      font-weight: 700;
+      font-size: 100px;
+
+      @media(max-width: 430px){
+        font-size: 80px;
+      }
+    }
+
+    @media(max-width: 430px){
+      font-size: 80px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding-top: 19px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: $light-gray;
+
+    @media(max-width: 430px){
+      font-size: 14px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.stop, .start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  transition: all ease .3s;
+
+  &.active {
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+.red {
+  circle {
+    stroke: $red;
+  }
+}
+
+.blue {
+  circle {
+    stroke: $light-blue;
+  }
+}
+
+.purple {
+  circle {
+    stroke: $purple;
+  }
+}

@@ -1,0 +1,35 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-size: 14px;
+}
+
+body{
+  overflow-x: hidden;
+  background: $dark-blue;
+}
+
+.container {
+  position: relative;
+  max-width: 410px;
+  margin: 0 auto;
+
+  @media(max-width: 430px){
+    width: 100%;
+  }
+}
+
+.kumbh {
+  font-family: $kumbh-sans;
+}
+
+.roboto {
+  font-family: $roboto-slab;
+}
+
+.space {
+  font-family: $space-mono;
+}

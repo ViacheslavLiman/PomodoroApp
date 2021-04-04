@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Pomodoro app</title>
+</head>
+<body class="kumbh red">
+  <div class="container">
+    <header class="header">
+      <h1 class="header__title">pomodoro</h1>
+      <div class="header__mode-block mode">
+        <ul class="mode__list">
+          <li class="mode__item active">
+            <label for="pomodoro">pomodoro</label>
+            <input id="pomodoro" class="mode__btn" type="radio" name="mode" value="pomodoro">
+          </li>
+          <li class="mode__item">
+            <label for="short-break">short break</label>
+            <input id="short-break" class="mode__btn" type="radio" name="mode" value="short break">
+          </li>
+          <li class="mode__item">
+            <label for="long-break">long break</label>
+            <input id="long-break" class="mode__btn" type="radio" name="mode" value="long break">
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__circle-out">
+        <div class="main__circle-inner">
+          <svg>
+            <circle cx="183" cy="183" r="170"></circle>
+          </svg>
+          <div class="main__text-block">
+            <div class="main__time">
+              <span class="minutes">00</span>:<span class="seconds">10</span>
+              <button class="main__button start active">start</button>
+              <button class="main__button stop">stop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__settings-btn settings-open"></div>
+      <div class="settings">
+        <div class="settings__outer settings-close"></div>
+        <div class="settings__inner">
+          <div class="settings__header">
+            <h3 class="settings__title">Settings</h3>
+            <button class="settings__close-btn settings-close"></button>
+          </div>
+          <form class="settings__form form">
+            <div class="form__time-block">
+              <h4 class="form__title">Time (minutes)</h4>
+              <div class="form__time">
+                <label class="form__label" for="pomodoro-inp">pomodoro</label>
+                <div class="form__time-input-block">
+                  <input id="pomodoro-inp" class="form__time-input" type="number" name="pomodoro" min="1" max="60" value="25">
+                  <svg class="form__time-arrow-up" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                  <svg class="form__time-arrow-down" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                </div>
+              </div>
+              <div class="form__time">
+                <label class="form__label" for="short-break-inp">short break</label>
+                <div class="form__time-input-block">
+                  <input id="short-break-inp" class="form__time-input" type="number" name="short break" min="1" max="60" value="5">
+                  <svg class="form__time-arrow-up" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                  <svg class="form__time-arrow-down" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                </div>
+              </div>
+              <div class="form__time">
+                <label class="form__label" for="long-break-inp">long break</label>
+                <div class="form__time-input-block">
+                  <input id="long-break-inp" class="form__time-input" type="number" name="long break" min="1" max="60" value="15">
+                  <svg class="form__time-arrow-up" xmlns="http://www.w3.org/2000/svg" ><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                  <svg class="form__time-arrow-down" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="form__font-block">
+              <h4 class="form__title">Font</h4>
+              <div class="form__font-group">
+                <label class="form__font kumbh" for="kumbh">
+                  <span class="text">Aa</span>
+                  <input id="kumbh" class="form__font-input" type="radio" name="fonts" value="kumbh">
+                </label>
+                <label class="form__font roboto" for="roboto">
+                  <span class="text">Aa</span>
+                  <input id="roboto" class="form__font-input" type="radio" name="fonts" value="roboto">
+                </label>
+                <label class="form__font space" for="space">
+                  <span class="text">Aa</span>
+                  <input id="space" class="form__font-input" type="radio" name="fonts" value="space">
+                </label>
+              </div>
+            </div>
+            <div class="form__color-block">
+              <h4 class="form__title">Color</h4>
+              <div class="form__color-group">
+                <label class="form__color" for="red">
+                  <input id="red" class="form__color-input" type="radio" name="colors" value="red">
+                </label>
+                <label class="form__color" for="blue">
+                  <input id="blue" class="form__color-input" type="radio" name="colors" value="blue">
+                </label>
+                <label class="form__color" for="purple">
+                  <input id="purple" class="form__color-input" type="radio" name="colors" value="purple">
+                </label>
+              </div>
+            </div>
+            <button class="form__submit-btn" type="submit" name="submit">Apply</button>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="./js/timer.js"></script>
+  <script src="./js/pomodoro.js"></script>
+  <script src="./js/localStorageFunctions.js"></script>
+  <script src="./js/handlers.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

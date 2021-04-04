@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 63px;
+  margin-bottom: 56px;
+
+  &__settings-btn {
+    width: 27px;
+    height: 27px;
+    background: center/contain no-repeat url('../images/icon-settings.svg');
+    transition: all ease .3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(90deg);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  @media(max-width: 768px) {
+    margin-top: 144px;
+    margin-bottom: 103px;
+  }
+}
